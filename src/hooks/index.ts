@@ -8,6 +8,7 @@ import useEffectOnce from './useEffectOnce'
 import useTitle from './useTitle'
 import usePrevious from './usePrevious'
 import useAsyncState from './useAsyncState'
+import useKeyPress from './useKeyPress'
 
 export {
   useSpinEdit,
@@ -19,5 +20,6 @@ export {
   useEffectOnce,
   useTitle,
   usePrevious,
-  useAsyncState
+  useAsyncState,
+  useKeyPress
 }

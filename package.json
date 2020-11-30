@@ -28,7 +28,7 @@
     "eject": "react-scripts eject",
     "build:cjs": "tsc",
     "build:es": "tsc -m esNext --outDir esm",
-    "build": "yarn build:cjs && yarn build:es",
+    "build": "rimraf lib && npm run build:cjs && npm run build:es",
     "storybook": "start-storybook -p 6006 -s public --no-dll",
     "storybook:build": "build-storybook",
     "storybook:upload": "gh-pages -d storybook-static --git \"$(which git)\"",

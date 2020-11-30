@@ -9,7 +9,7 @@ import {
   useUpdateEffect,
   useTitle,
   usePrevious
-} from '.'
+} from '../lib/hooks'
 
 function App() {
   const [value, setValue] = useState<number>(1)

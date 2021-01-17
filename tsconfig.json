@@ -22,11 +22,13 @@
     ],
     "importHelpers": true
   },
+  "include": [
+    "src/hooks"
+  ],
   "exclude": [
     "node_modules",
     "lib",
     "esm",
     "./src/tests",
-    "./src/stories"
   ]
 }

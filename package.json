@@ -4,9 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
-    "@babel/preset-typescript": "^7.12.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/react-hooks": "^3.4.2",
@@ -29,16 +27,21 @@
     "build:cjs": "tsc",
     "build:es": "tsc -m esNext --outDir esm",
     "build": "rimraf lib && npm run build:cjs && npm run build:es",
-    "storybook": "start-storybook -p 6006 -s public --no-dll",
-    "storybook:build": "build-storybook",
-    "storybook:upload": "gh-pages -d storybook-static --git \"$(which git)\"",
-    "storybook:clean": "rimraf storybook-static"
+    "commit:lint": "commitlint -e $HUSKY_GIT_PARAMS",
+    "docs:jsdoc2md": "rimraf docs/pages/folder1/api.md && npx jsdoc2md --files src/hooks/* --configure ./jsdoc2md.json >> docs/pages/folder1/api.md",
+    "docs:build": "npm run docs:jsdoc2md && npx vuepress build docs",
+    "docs:dev": "npm run docs:jsdoc2md && npx vuepress dev docs"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npm run commit:lint"
+    }
   },
   "browserslist": {
     "production": [
@@ -53,16 +56,16 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@storybook/addon-actions": "^6.0.28",
-    "@storybook/addon-essentials": "^6.0.28",
-    "@storybook/addon-links": "^6.0.28",
-    "@storybook/node-logger": "^6.0.28",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.0.28",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
+    "@commitlint/cli": "^11.0.0",
     "babel-loader": "^8.2.1",
-    "gh-pages": "^3.1.0",
-    "react-is": "^17.0.1"
+    "husky": "^3.1.0",
+    "jsdoc-babel": "^0.5.0",
+    "jsdoc-to-markdown": "^6.0.1",
+    "vuepress": "^1.8.0"
   },
   "repository": {
     "type": "git",

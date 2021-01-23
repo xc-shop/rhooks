@@ -10,9 +10,9 @@
 ## 安装
 
 ```bash
-npm i @jomsou/utils -S
+npm i @jomsou/rhooks -S
 or
-yarn add @jomsou/utils -S
+yarn add @jomsou/rhooks -S
 ```
 
 - 在原生js中使用
@@ -23,15 +23,15 @@ yarn add @jomsou/utils -S
     const { 
       xxx,
       ...
-    } = window['psion-react-hooks'];
+    } = window['rhooks'];
 <script>
 ```
 
 - 在框架中使用
 
 ```js
-import JrfeUtils from '@jomsou/utils';
-const { xxx, ... } = JrfeUtils
+import Jrferhooks from '@jomsou/rhooks';
+const { xxx, ... } = Jrferhooks
 or 
-import { xxx } from '@jomsou/utils';
+import { xxx } from '@jomsou/rhooks';
 ```

@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /egg.png
-heroText: psion-react-hooks
+heroText: rhooks
 tagline: 
 actionText: 马上进入 →
 actionLink: /pages/folder1/install.md
